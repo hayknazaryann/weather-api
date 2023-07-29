@@ -1,0 +1,45 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "ApplicationAPI",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/weather?city=": {
+            "get": {
+                "tags": [
+                    "weather"
+                ],
+                "summary": "Get temperature from sources and their average",
+                "operationId": "8984f7cdcaa81d1652ec3050ab6d52c2",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "404": {
+                        "description": "The city not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Somethinng went wrong"
+                    }
+                }
+            }
+        }
+    }
+}
